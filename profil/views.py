@@ -1,11 +1,18 @@
 from django.shortcuts import render
-from .models import About
+from .models import About, Feature
 from .forms import FormBarang
 
 # Create your views here.
 def home(request):
     about = About.objects.first()
-    return render(request,'index.html', {'about':about})
+    feature = Feature.objects.first()
+
+    data = {
+        'about':about,
+        'feature':feature,
+        
+    }
+    return render(request,'index.html', data)
 
 def berita(request):
     return render(request,'berita.html')

@@ -31,3 +31,14 @@ class About(models.Model):
 
     def __str__(self):
         return self.judul
+
+class Feature(models.Model):
+    pengantar = models.TextField()
+    fet1 = models.CharField(max_length=75)
+    isi_fet1=models.TextField()
+    fet2=models.CharField(max_length=75)
+    isi_fet2=models.TextField()
+    img_fet=models.ImageField(upload_to='', blank=True)
+
+    def __str__(self):
+        return self.pengantar
